@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-14 select标签（下拉菜单和列表）</title>
+</head>
+<body>
+<form>
+	<table width="600px" align="center" bgcolor="#f2f2f2">
+		<tr>
+			<td>城市:</td>
+			<td>
+				<select name="city">
+					<option value="" selected>请选择</option>
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+					<option value="河北">河北</option>
+					<option value="上海">上海</option>
+					<option value="福建">福建</option>
+					<option value="厦门">厦门</option>
+				</select>
+				<select name="city" size="6" multiple> <!--列表显示-->
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+					<option value="河北">河北</option>
+					<option value="上海">上海</option>
+					<option value="福建">福建</option>
+					<option value="厦门">厦门</option>
+				</select>
+
+				<!--分组下拉菜单和列表<optgroup>-->
+				<select name="city">
+					<option value="" selected>请选择</option>
+					<optgroup label="华北地区">
+						<option value="北京">北京</option>
+						<option value="天津">天津</option>
+						<option value="河北">河北</option>
+					</optgroup>
+					<optgroup label="华东地区">
+						<option value="上海">上海</option>
+						<option value="福建">福建</option>
+						<option value="厦门">厦门</option>
+					</optgroup>
+				</select>
+				<select name="city" size="5" multiple>
+					<option value="" selected>请选择</option>
+					<optgroup label="华北地区">
+						<option value="北京">北京</option>
+						<option value="天津">天津</option>
+						<option value="河北">河北</option>
+					</optgroup>
+					<optgroup label="华东地区">
+						<option value="上海">上海</option>
+						<option value="福建">福建</option>
+						<option value="厦门">厦门</option>
+					</optgroup>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="button" value="点击"/>
+				<input type="submit" name="submit" value="Submit"/><!--重要!!!图像域可以起到提交按钮的功能-->
+				<input type="reset" name="reset" value="Reset"/>
+
+				<!--图像域（图像提交按钮）-->
+				<input type="image" name="image_button" src="image/image-button.png">
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<!--隐藏域 用户无法看到-->
+				<input type="hidden" name="hidden" value="这是用户注册信息">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

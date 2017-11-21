@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-1 表单页面调整</title>
+</head>
+<body>
+<!--
+form属性
+	action URL 提交表单时向何处发送表单数据
+	method get、post 设置表单以何种方式发送到指定页面
+	name form_name 表单名称
+	target _blank、_self、_parent、_top 在何处打开action URL
+	enctype application/x-www-form-urlencoded、multipart/form-data、text/plain 在发送表单数据之前如何对其编码-->
+<form action="action.php" method="post" name="registerForm" target="_blank"><!--提交表单至服务器文件 当前为action.php-->
+	<!--
+		method
+			get:
+				使用URL传递参数，数据显示在URL中->保密性差
+				对发送信息的数量有限制
+				一般用于信息获取
+			post:
+				表单数据（整体打包）作为HTTP请求体的一部分
+				对发送信息的数量无限制
+				一般用于修改服务器上的资源-->
+	<table width="600px" align="center" bgcolor="#f2f2f2">
+		<tr>
+			<td align="right">姓名:</td>
+			<td align="left"><input type="text" name="username" size="25" maxlength="6" placeholder="请输入姓名"/></td>
+		</tr>
+		<tr>
+			<td align="right">邮箱:</td>
+			<td align="left"><input type="email" name="email" size="25" value="@163.com"/></td>
+		</tr>
+		<tr>
+			<td align="right">密码:</td>
+			<td align="left"
+			><input type="password" name="password" size="25" minlength="6" maxlength="14" placeholder="请输入密码"/></td>
+		</tr>
+		<tr>
+			<td align="right">确认密码:</td>
+			<td align="left"><input type="password" name="passwordconfirm" size="25" minlength="6" maxlength="14"
+					   placeholder="请再一次输入密码"/></td>
+		</tr>
+		<tr>
+			<td align="right">上传文件:</td>
+			<td align="left"><input type="file" name="photo"/></td>
+		</tr>
+		<tr>
+			<td align="right">性别:</td>
+			<td align="left"><!--重要重要重要!!!:同一组单选框的name属性值要相同-->
+				男<input type="radio" name="sex" value="male"/><!--value值为提交表单时（选中的单选或者复选框value内容）通过name发送给服务器使用的内容
+																   服务器是通过name属性来识别是哪组的单选框或者复选框内容-->
+				女<input type="radio" name="sex" value="famale"/>
+				保密<input type="radio" name="sex" value="sercret" checked>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">爱好:</td>
+			<td align="left">
+				读书<input type="checkbox" name="lobby" value="read"/>
+				游泳<input type="checkbox" name="lobby" value="swim"/>
+				跳舞<input type="checkbox" name="lobby" value="dance"/>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">城市:</td>
+			<td align="left">
+				<select name="city">
+					<option value="" selected>请选择</option>
+					<option value="北京">北京</option>
+					<option value="天津">天津</option>
+					<option value="河北">河北</option>
+					<option value="上海">上海</option>
+					<option value="福建">福建</option>
+					<option value="厦门">厦门</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">简介:</td>
+			<td align="left">
+				<!--多行文本域<textarea>标签-->
+				<textarea name="description" rows="6" cols="50" placeholder="请输入个人介绍"></textarea>
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan="2">
+				<input type="button" name="button" value="点击"/>
+				<input type="submit" name="submit" value="Submit"/><!--重要!!!图像域可以起到提交按钮的功能-->
+				<input type="reset" name="reset" value="Reset"/>
+
+				<!--图像域（图像提交按钮）-->
+				<input type="image" name="image_button" src="image/image-button.png">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<!--隐藏域 用户无法看到-->
+				<input type="hidden" name="hidden" value="这是用户注册信息">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1-4 搭建表单页面结构</title>
+</head>
+<body>
+<h1 align="center">注册信息</h1>
+<hr color="#336699">
+<!--注意!!!：<table>用来为form布局，所以<table>写在<form>里面-->
+<form>
+	<table width="600px" align="center" bgcolor="#f2f2f2">
+		<tr>
+			<td>姓名:</td>
+			<td><input type="text" name="username" size="25" maxlength="6" placeholder="请输入姓名"/></td>
+		</tr>
+		<tr>
+			<td>邮箱:</td>
+			<td><input type="email" name="email" size="25" value="@163.com"/></td>
+		</tr>
+		<tr>
+			<td>密码:</td>
+			<td><input type="password" name="password" size="25" minlength="6" maxlength="14" placeholder="请输入密码"/></td>
+		</tr>
+		<tr>
+			<td>确认密码:</td>
+			<td><input type="password" name="passwordconfirm" size="25" minlength="6" maxlength="14"
+					   placeholder="请再一次输入密码"/></td>
+		</tr>
+		<tr>
+			<td>上传文件:</td>
+			<td><input type="file" name="photo"/></td>
+		</tr>
+		<tr>
+			<td>性别:</td>
+			<td><!--重要重要重要!!!:同一组单选框的name属性值要相同-->
+				男<input type="radio" name="sex" value="male"/><!--value值为提交表单时（选中的单选或者复选框value内容）通过name发送给服务器使用的内容
+																   服务器是通过name属性来识别是哪组的单选框或者复选框内容-->
+				女<input type="radio" name="sex" value="famale"/>
+				保密<input type="radio" name="sex" value="sercret" checked>
+			</td>
+		</tr>
+		<tr>
+			<td>爱好:</td>
+			<td>
+				读书<input type="checkbox" name="lobby" value="read"/>
+				游泳<input type="checkbox" name="lobby" value="swim"/>
+				跳舞<input type="checkbox" name="lobby" value="dance"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" name="button" value="点击"/>
+				<input type="submit" name="submit" value="Submit"/><!--重要!!!图像域可以起到提交按钮的功能-->
+				<input type="reset" name="reset" value="Reset"/>
+
+				<!--图像域（图像提交按钮）-->
+				<input type="image" name="image_button" src="image/image-button.png">
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>
+				<!--隐藏域 用户无法看到-->
+				<input type="hidden" name="hidden" value="这是用户注册信息">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

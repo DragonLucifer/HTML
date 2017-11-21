@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-7表格属性(1)</title>
+</head>
+<body>
+<!--三部曲
+			1.<table> 表格
+			2.<tr>	行
+			3.<td>	单元格 <th> 表头单元格（居中加粗）
+		-->
+<!--
+	<table>属性
+		1.width 规定表格的宽度
+		2.align 表格相对周围元素的对齐方式
+		3.border 规定表格边框的宽度
+		4.bgcolor 表格背景颜色
+		5.cellpadding 单元边沿与其内容的空白
+		6.cellspacing 单元格之间的空白
+		7.frame 规定外侧边框可见部分
+		8.rules 规定内侧边框可见部分
+		-->
+<!--
+	frame
+		void 不显示外侧边框
+		above 显示上部的外侧边框
+		below 现实下部的外侧边框
+		hsides 显示上部和下部的外侧边框
+		vsides 显示左边和右边的外侧边框
+		lhs 显示左边的外侧边框
+		rhs 显示右边的外侧边框
+		box 显示所有的外侧边框
+		border 显示所有的外侧边框-->
+<!--
+	rules
+		none 没有线条
+		groups 位于行组和列组之间的线条
+		rows 位于行之间的线条
+		cols 位于列之间的线条
+		all 位于行和列之间的线条-->
+<table border="6" width="500px" bgcolor="#f2f2f2" cellspacing="0" cellpadding="5px" align="center" frame="void"
+	   rules="rows">
+	<!--注意：每行当中的列都是一致的-->
+	<!--表格作为一个整体 在解析HTML的时候需要将表格加载完毕后才能显示 当表格复杂又长的时候降低用户体验
+		解决方法：表格结构标签 边加载边显示
+		thead 表格头部 放标题之类内容
+		tbody 表格主题 放数据主体
+		tfoot 表格脚部 放表格脚注		三者编辑顺序与显示无关
+		-->
+	<!--重要！！！：添加或者删除某列数据的时候注意要把每一行的这一列的数据都要添加或者删除-->
+	<!--添加行---添加tr   添加列---每个tr中添加td-->
+	<caption>前端工程师平均工资</caption>  <!--表格标题 唯一居中-->
+	<thead>
+		<tr>
+			<th>城市</th>     <!--第一列-->
+			<th>2014年</th>   <!--第二列-->
+			<th>2014年</th>   <!--第三列-->
+			<th>2015年</th>   <!--第四列-->
+			<th>2016年</th>   <!--第五列-->
+		</tr>
+		<tr>
+			<th>城市</th>
+			<th>上半年</th>
+			<th>下半年</th>
+			<th>2015</th>
+			<th>2016</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>北京</td>
+			<td>8000</td>
+			<td>9000</td>
+			<td>10000</td>
+			<td>12000</td>
+		</tr>
+		<tr>
+			<td>上海</td>
+			<td>8000</td>
+			<td>9000</td>
+			<td>10000</td>
+			<td>12000</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>合计</td>
+			<td>16000</td>
+			<td>18000</td>
+			<td>20000</td>
+			<td>24000</td>
+		</tr>
+	</tfoot>
+</table>
+</body>
+</html>
